@@ -16,7 +16,9 @@ import { getFirestore, doc, addDoc, collection} from "firebase/firestore";
 function Home() {
 
   const addFavorite = async (recipe) => {
+    //test
     const user = auth.currentUser;
+    const id = user.uid;
 
     await addDoc(collection(db, "users", user.uid, "favorites"), recipe);
     
